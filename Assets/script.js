@@ -2,10 +2,13 @@ var weatherQueryURL = 'https://api.openweathermap.org/data/2.5/onecall?lat=41.87
 
 var weather = $('#weather');
 
+var weatherHTML = document.getElementById('weather')
+
 $.ajax({
     url: weatherQueryURL,
     method: "GET"
 }).then(function(response) {
     weather.attr('src', 'https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=6e365be137d7d25f10a10cd49612b3b5')
-    console.log(response)
+    console.log(response.current.temp)
+    weatherHTML.innerText = response.current.temp
 })
