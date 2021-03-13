@@ -10,5 +10,6 @@ $.ajax({
 }).then(function(response) {
     weather.attr('src', 'https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=6e365be137d7d25f10a10cd49612b3b5')
     console.log(response.current.temp)
+    console.log(response)
     weatherHTML.innerText = response.current.temp
 })
