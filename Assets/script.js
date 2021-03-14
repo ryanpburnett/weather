@@ -1,15 +1,21 @@
-var weatherQueryURL = 'https://api.openweathermap.org/data/2.5/onecall?lat=41.8781&lon=87.6298&exclude={part}&appid=6e365be137d7d25f10a10cd49612b3b5';
+let weatherQueryURL = 'https://api.openweathermap.org/data/2.5/onecall?lat=41.8781&lon=87.6298&exclude={part}&appid=6e365be137d7d25f10a10cd49612b3b5';
 
-var weather = $('#weather');
+let weather = $('#weather');
 
-var weatherHTML = document.getElementById('weather')
+let weatherHTML = document.getElementById("weather");
+let city = document.getElementById("city");
+let buttion = document.getElementById("button")
 
-$.ajax({
-    url: weatherQueryURL,
-    method: "GET"
-}).then(function(response) {
-    weather.attr('src', 'https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=6e365be137d7d25f10a10cd49612b3b5')
-    console.log(response.current.temp)
-    console.log(response)
-    weatherHTML.innerText = response.current.temp
-})
+button.addEventListener("click", lookForWeather)
+
+function lookForWeather() {
+    $.ajax({
+        url: weatherQueryURL,
+        method: "GET"
+    }).then(function(response) {
+        weather.attr('src', 'https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=6e365be137d7d25f10a10cd49612b3b5')
+        console.log(response.current.temp)
+        console.log(response)
+        weatherHTML.innerText = response.current.temp
+    })
+}
