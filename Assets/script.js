@@ -1,7 +1,7 @@
 const apiID = '476bb8ed1264e5d0ca7169cf86193cf6';
 
 let weatherHTML = document.getElementById("weather");
-let icon = document.getElementById("icon")
+let iconDiv = document.getElementById("icon-div")
 let city = document.getElementById("city");
 let button = document.getElementById("button");
 
@@ -19,7 +19,7 @@ function getWeather() {
         weatherHTML.innerText = 
         `Current temperature in ${city.value}: 
         ${response.main.temp} °F`
-        icon.innerHTML = `<img src="${iconURL}>"`
+        iconDiv.innerHTML = `<img src="${iconURL}">`
         console.log(iconURL)
         console.log(icon)
     })
