@@ -23,10 +23,10 @@ function getWeather() {
         console.log(iconURL)
         console.log(icon)
 
-        if (icon.contains('d')) {
-            body.setAttribute("class", "day")
+        if ($.contains(icon, "d")) {
+            document.body.setAttribute("class", "day")
         }else{
-            body.setAttribute("class", "night")
+            document.body.setAttribute("class", "night")
         }
     })
 
