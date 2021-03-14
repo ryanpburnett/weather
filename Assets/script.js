@@ -4,7 +4,7 @@ let weatherHTML = document.getElementById("weather");
 let city = document.getElementById("city")
 let button = document.getElementById("button")
 
-let weatherQueryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiID}`
+let weatherQueryURL = `https://api.openweathermap.org/data/2.5/weather?q=chicago&appid=${apiID}&units=imperial`
 
 function getWeather() {
     $.ajax({
@@ -12,8 +12,8 @@ function getWeather() {
         method: "GET"
     }).then(function(response) {
         console.log(response)
+        weatherHTML.innerText = "current temperature: " + response.main.temp
     })
 }
-console.log(city.value)
 
 // `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid${apiID}`
