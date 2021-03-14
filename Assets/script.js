@@ -5,9 +5,9 @@ let icon = document.getElementById("icon")
 let city = document.getElementById("city");
 let button = document.getElementById("button");
 
-let weatherQueryURL = `https://api.openweathermap.org/data/2.5/weather?q=chicago&appid=${apiID}&units=imperial`
 
 function getWeather() {
+    let weatherQueryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiID}&units=imperial`
     $.ajax({
         url: weatherQueryURL,
         method: "GET"
@@ -17,7 +17,7 @@ function getWeather() {
         icon + ".png"
         console.log(response)
         weatherHTML.innerText = 
-        `Current temperature in ${city}: 
+        `Current temperature in ${city.value}: 
         ${response.main.temp} °F`
         icon.innerHTML = `<img src="${iconURL}>"`
         console.log(iconURL)
