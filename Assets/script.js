@@ -1,18 +1,19 @@
-const apiID = '6e365be137d7d25f10a10cd49612b3b5'
+const apiID = '476bb8ed1264e5d0ca7169cf86193cf6';
 
 let weatherHTML = document.getElementById("weather");
-let city = document.getElementById("city");
+let city = document.getElementById("city")
 let button = document.getElementById("button")
 
-button.addEventListener("click", lookForWeather)
+let weatherQueryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiID}`
 
-function lookForWeather() {
-    let weatherQueryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid${apiID}`
+function getWeather() {
     $.ajax({
         url: weatherQueryURL,
         method: "GET"
     }).then(function(response) {
-        weatherHTML.innerText = response.current.temp
+        console.log(response)
     })
 }
+console.log(city.value)
 
+// `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid${apiID}`
