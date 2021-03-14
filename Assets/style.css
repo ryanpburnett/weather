@@ -1,3 +1,21 @@
+.day {
+    background: rgb(205,219,255);
+    background: linear-gradient(139deg, rgba(205,219,255,1) 0%, rgba(114,254,255,1) 100%);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.night {
+    background: rgb(205,219,255);
+    background: linear-gradient(139deg, rgba(205,219,255,1) 0%, rgba(3,3,3,1) 72%); 
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 #city {
     width: 70%;
 }

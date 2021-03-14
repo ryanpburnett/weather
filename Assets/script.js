@@ -22,6 +22,13 @@ function getWeather() {
         iconDiv.innerHTML = `<img src="${iconURL}">`
         console.log(iconURL)
         console.log(icon)
+
+        if (icon.contains('d')) {
+            body.setAttribute("class", "day")
+        }else{
+            body.setAttribute("class", "night")
+        }
     })
+
 }
 
