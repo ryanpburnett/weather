@@ -1,3 +1,19 @@
 #city {
     width: 70%;
 }
+
+h1 {
+    font-size: 40px;
+    color: blueviolet;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#weather {
+    font-size: 20px;
+    color: blueviolet;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#main {
+    padding: 2em;
+}

@@ -17,8 +17,9 @@ function getWeather() {
         icon + ".png"
         console.log(response)
         weatherHTML.innerText = 
-        `current temperature: ${response.main.temp}`
-        icon.innerText = `<img src="${iconURL}>"`
+        `Current temperature in ${city}: 
+        ${response.main.temp} °F`
+        icon.innerHTML = `<img src="${iconURL}>"`
         console.log(iconURL)
         console.log(icon)
     })
