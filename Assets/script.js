@@ -23,9 +23,9 @@ function getWeather() {
         console.log(iconURL)
         console.log(icon)
 
-        if ($.contains(icon, "d")) {
+        if (icon.includes("d")) {
             document.body.setAttribute("class", "day")
-        }else{
+        }else if (icon.includes("n")) {
             document.body.setAttribute("class", "night")
         }
     })
