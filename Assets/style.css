@@ -26,8 +26,13 @@ h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#weather {
+.temp {
     font-size: 20px;
+    color: blueviolet;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.otherWeather {
     color: blueviolet;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
