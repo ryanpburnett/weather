@@ -1,5 +1,6 @@
 const apiID = '476bb8ed1264e5d0ca7169cf86193cf6';
 
+let date = document.getElementById("date")
 let weatherHTML = document.getElementById("weather");
 let iconDiv = document.getElementById("icon-div")
 let city = document.getElementById("city");
@@ -7,7 +8,7 @@ let button = document.getElementById("button");
 
 
 function getWeather() {
-    let weatherQueryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiID}&units=imperial`
+    let weatherQueryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&cnt=5&appid=${apiID}&units=imperial`
     $.ajax({
         url: weatherQueryURL,
         method: "GET"
@@ -16,12 +17,11 @@ function getWeather() {
         let iconURL = "https://openweathermap.org/img/wn/" +
         icon + ".png"
         console.log(response)
+        date.innerText = new Date()
         weatherHTML.innerText = 
         `Current temperature in ${city.value}: 
         ${response.main.temp} °F`
         iconDiv.innerHTML = `<img src="${iconURL}">`
-        console.log(iconURL)
-        console.log(icon)
 
         if (icon.includes("d")) {
             document.body.setAttribute("class", "day")
@@ -29,6 +29,6 @@ function getWeather() {
             document.body.setAttribute("class", "night")
         }
     })
-
+    
 }
 
